@@ -20,7 +20,7 @@
 <li>Students can describe the difference between weak (dynamic) and strong (static) typing.</li>
 <li>Students can declare a variable</li>
 <li>Students can assign a variable a value</li>
-<li>Students can reassign a variable a new value</li>
+<li>Students can reassign variable values</li>
 </ul>
 </details>
 
@@ -66,17 +66,12 @@
 </details>
 
 <details>
-<summary>Scope, const, and let</summary>
-<ul>
-<li>Students can access variables from local function scope to global scope</li>
-<li>Let
-<ul>
-<li>Students can declare a let and a const</li>
-<li>Students can assign a let a value</li>
-<li>Students can use let and const to create block-scoped local variables</li>
-</ul>
-</li>
-</ul>
+<summary>Scope, let, and const</summary>
+- Scope
+  - Students can access variables across scopes (local function scope to global scope)
+- Let & Const
+  - Students can declare let and const variables
+  - Students can use let and const to create block-scoped local variables
 </details>
 
 ---
