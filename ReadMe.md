@@ -1,6 +1,6 @@
 # JavaScript 1
 
-## Learning objectives
+## Student Learning Objectives
 
 <details>
 <summary>JavaScript Basics</summary>
