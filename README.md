@@ -25,7 +25,7 @@
 </details>
 
 <details>
-<summary>Complex Data Types</summary>
+<summary>Complex Datatypes</summary>
 <ul>
 <li>Arrays
 <ul>
