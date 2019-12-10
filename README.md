@@ -67,11 +67,12 @@
 
 <details>
 <summary>Scope, let, and const</summary>
-- Scope
-  - Students can access variables across scopes (local function scope to global scope)
-- Let & Const
-  - Students can declare let and const variables
-  - Students can use let and const to create block-scoped local variables
+  
+* Scope
+  * Students can access variables across scopes (local function scope to global scope)
+* Let & Const
+  * Students can declare let and const variables
+  * Students can use let and const to create block-scoped local variables
 </details>
 
 ---
