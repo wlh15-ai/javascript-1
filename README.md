@@ -5,7 +5,7 @@
 <details>
 <summary>JavaScript Basics</summary>
 <ul>
-<li>Students can recite and identify the JavasScript data types.
+<li>Students can recite and identify the JavaScript data types.
 <ul>
   <li>Number</li>
   <li>String</li>
