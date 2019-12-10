@@ -66,7 +66,7 @@
 </details>
 
 <details>
-<summary>Scope, let, and const</summary>
+<summary>Scope, Let, and Const</summary>
   
 * Scope
   * Students can access variables across scopes (local function scope to global scope)
@@ -83,11 +83,10 @@
 
 ---
 
-In this lecture we introduce the basics of JavaScript, which, together with HTML and CSS make up the bulk of the internet. While HTML and CSS allow us to display information and style how it looks, JavaScript allows us to make things happen on our websites. Any interactivity or dynamic functionality of a website is usually done using JavaScript.
+In this lecture we introduce the basics of JavaScript, which, together with HTML and CSS make up the bulk of the internet. While HTML and CSS allow us to display information and style how it looks, JavaScript allows us to make things happen on our websites. Any interactivity or dynamic functionality of a website is usually created with JavaScript.
 
 > Note: JavaScript is regularly updated. The most significant update in recent years is known as ES6. Newly added features to ES6 can be found at [ECMAScript 6: New Features: Overview and Comparison](http://es6-features.org/#Constants)
->
-> As you study and learn more about JavaScript, it will be beneficial to know which features were added in ES6 or later versions of JavaScript
+> As you continue to study and learn more about JavaScript, it will be beneficial to know which features were added in ES6, and how they compare to previous versions. You will also want to continuously stay up-to-date with the most recently released features of JavaScript.
 
 ### Javascript Basics
 
@@ -97,7 +96,7 @@ In this lecture we introduce the basics of JavaScript, which, together with HTML
 
 Variables are the primary mechanism for storing data in JavaScript. Once a variable has been declared, it can be referenced later in the file.
 
-Variables are declared using the `var` keyword using the following format:
+Variables can be declared using the `var`, `let`, or `const` keywords in the following format:
 
 ```js
 var num = 10
@@ -183,7 +182,7 @@ In JavaScript, data is represented using the following data types:
 
 >
 
-#### If statements
+#### If Statements
 
 ---
 
@@ -266,17 +265,17 @@ var nameOfFunction = function() {
 }
 ```
 
-> Note: You will learn the difference between the two later in the cohort.
+> Note: You will learn some of the differences between function declarations and function expressions later in the course.
 
-Functions are invoked by referencing the function name and pairing it with a pair of parentheses `()`. Think of these parentheses as the button you are pushing to invoke the function. For example, to invoke our above written function we would simply type:
+Functions are invoked by referencing the function name and pairing it with a pair of parentheses `()`. Think of these parentheses as the button you are pushing to invoke the function. For example, to invoke our above written function we simply type:
 
 ```js
 nameOfFunction()
 ```
 
-> This would invoke the function and execute any code we have written inside of it.
+> Typing this invokes the function and executes any code written inside of it.
 
-Functions can be set up to receive parameters, or values that will change depending on when the function is invoked. For example, to write a simple function that will add two numbers together we can do the following:
+Functions can be set up to receive parameters, or values that will change depending on when the function is invoked. For example, here's a function that is set up to add two numbers together when invoked:
 
 ```js
 function addTwo(num1, num2) {
@@ -284,9 +283,8 @@ function addTwo(num1, num2) {
 }
 ```
 
-> This function will take in two numbers and return their sum. We do not know what the values for `num1` and `num2` will be for each invocation, so the parameters act as placeholders.
->
-> To invoke this function we could do the following:
+> The function takes in two numbers and returns their sum. `num1` and `num2` are "parameters", or placeholders, for whatever numbers end up being passed into the function. 
+> This function could be invoked as follows:
 
 ```js
 addTwo(2, 2) //Returns 4
@@ -294,39 +292,39 @@ addTwo(3, 3) //Returns 6
 addTwo(5, 5) //Returns 10
 ```
 
-> This is how we make our functions reusable. When you invoke a function, the values passed to it are called arguments, they are used in the function in place of parameters.
+> Functions are thus reusable. When functions are invoked, the values passed into it are called "arguments", they are what are actually used in the function in place of the parameters.
 
-We use the `return` keyword to determine the value that is returned by the function. A function can return any data type, or even another function. When we invoke a function, it becomes equal to its return value and can be assigned to a variable. For example:
+The `return` keyword is used to determine the value that is returned by the function. A function can return any data type, or even another function. When functions are invoked, they become equal to their `return` value, and can consequently be assigned to a variable. For example:
 
 ```js
-var a = addTwo(2, 2) //Our variable a is now equal to 4 and can be used later
-var b = addTwo(3, 3) //Variable b is now equal to 6
+var a = addTwo(2, 2) //Variable a is now assigned a value of 4
+var b = addTwo(3, 3) //Variable b is now assigned a value of 6
 ```
 
-> The return keyword prevents any code below it from executing. It effectively kicks us out of our function. Make sure your return statement is the last thing you want to have happen in a function.
->
+> The `return` keyword prevents any code below it from executing. It effectively kicks us out of the function immediately when hit. Make sure your `return` statement is placed in a way that doesn't prevent intended behavior from happening.
+
 > A final example:
 
 ```js
-var name = 'Andrew'
-var name2 = 'Jonathan'
+var name = 'Matt'
+var name2 = 'Matias'
 
 function sayHi(person) {
   return 'Hello, ' + person + '!'
   //We are joining multiple strings together into a larger string.
-  //This is known as concatenation
+  //Joining strings together is called "concatenation"
 }
 
-//What will be the value of the following invocations?
+//What would be the value of the following variable declarations?
 
 var hiAndrew = sayHi(name)
 var hiJonathan = sayHi(name2)
 var hiBob = sayHi('Bob')
 ```
 
-> Remember: Functions and if statements can also be nested inside of each other. The possibilities are endless!
+> Remember: Functions and if statements can also be nested inside of each other. The possibilities are infinite!
 
-### Scope and Let
+### Scope, Let, and Const
 
 #### Scope
 
@@ -343,15 +341,15 @@ function sayHi(person) {
 }
 ```
 
-> In this example, the function `sayHi` is able to use the variable `name` because it is part of the **global scope**. Any variable that is declared in the global scope is available anywhere in our file.
+> In this example, the function `sayHi` is able to use the variable `name` because it is part of the "global scope". Any variable that is declared in the global scope is available anywhere in our file.
 >
-> However, if we attempted to access our `greeting` variable outside of the function `sayHi`, we would be unable to do so because when we create a new code block, we create a new scope. We are able to look up into more general scopes, but not able to look down into more specific scopes.
+> However, if we attempted to access our `greeting` variable outside of the function `sayHi`, we would be unable to do so because when we create a new code block, we create a new scope. We are able to "look out" into more general scopes, but not able to "look down" into more specific scopes.
 
-#### let and const
+#### Let and Const
 
 ---
 
-Beginning with ES6, we were given new ways to declare variables. We no longer have to use the `var` keyword and can instead declare variables using the `let` keyword and the `const` keyword. While `const` has some special properties, we use `let` the same way we use `var`
+With ES6, developers were given new ways to make variable declarations, the `let` and `const` keywords. Each have special properties. For the most part, `let` can be used just like `var`. `const` is unique in that it prevents the variable from being reassigned a value. `const` makes its value constant. Both `let` and `const` are block scoped, as opposed to `var` which is globally scoped. 
 
 #### let
 
@@ -391,13 +389,13 @@ function doThing() {
 }
 ```
 
-> Note: Keep in mind this is just an example. It is not a good idea to reuse variable names across various scopes, each unique variable should have an appropriate name. Good naming convention is one of the most important habits you can develop.
+> Note: Keep in mind this is just an example. It is not a good idea to reuse variable names across various scopes, each unique variable should have an appropriate name. Good naming convention is one of the most important habits of a good developer.
 
 #### const
 
 ---
 
-`const` is a little different from `let` in that it cannot be reassigned after being declared. However, if an object or an array is assigned to a `const` variable, you can change their contents (properies on an object, indicies on an array). Let's see an example:
+`const` is a little different from `let` in that it cannot be reassigned after being declared. However, if an object or an array is assigned to a `const` variable, you can change their contents (properties on an object, indicies on an array). Let's see an example:
 
 ```js
 const num = 10
@@ -416,7 +414,7 @@ person.name = 'Fred'
 //This will work just fine
 ```
 
-> It is good practice to declare all of your variables using `const` and use `let` only when needed. This will make your code less bug prone.
+> It is generally speaking good practice to declare variables using `const`, using `let` only when needed, and avoiding `var` when possible. That said, there are valid use cases for each of `var`, `let`, and `const`, so there is no one size fits all approach to variable declaration. Ultimately, you will need to understand the differences between the three, and determine which fits best in a given scenario.  
 
 ### Additional Resources
 
@@ -436,4 +434,4 @@ person.name = 'Fred'
 ---
 
 - [Traversy Media Javascript Intro](https://www.youtube.com/watch?v=hdI2bqOjy3c&list=PLillGF-RfqbbnEGy3ROiLWk7JMCuSyQtX&index=2&t=0s) - An introduction to many of the topics covered here.
-  > Although this video is long, watching it will greatly deepen your understanding of the discussed topics and prepare you for the more advanced topics we will be covering very soon.
+  > Although this video is long, watching it will deepen your understanding of the discussed topics and prepare you for the more advanced topics we will be covering very soon.
